@@ -1,0 +1,15 @@
+title = 打上花火 （うちあげはなび）
+subtitle =GuZheng
+composer = Composer: DAOKO×米津玄師
+
+1=F 
+4/4
+
+q2' q3' q5' q1' q2' q3' q5' q1' 
+q2' q3' q5' q6' q2' q3' q6 q1' 
+q2' q3' q5' q1' q2' q3' q5' q1' 
+q2' q3' q5' q6' q2' q3' q6 q1' 
+q2 q3 q5 q1 q2 q3 q5 q1
+q2 q3 q5 q1 q2 q3 q5 q1
+q2 q3 q5 q1 q2 q3 q5 q1
+q2 q3 q5 q1 q2 q3 q3, q5, 
