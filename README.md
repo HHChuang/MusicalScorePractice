@@ -1,4 +1,4 @@
-# Practice read/write musical score using LilyPond
+# Using LilyPond to write music score
 
 ## What is Lilypond?
 Open source and a text-based programming language, which is used for music engraving. Just like the LaTex-version in music. (c.f. [Wiki][1])
