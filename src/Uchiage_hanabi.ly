@@ -3,9 +3,9 @@
 \header {
     title = "打上花火 （うちあげはなび）"
     subtitle = "GuZheng"
-    composer = "Composer: DAOKO×米津玄師"
-    arranger = "Arranger: 莊曉涵×謝岱霖"
-    tagline = ##f 
+    composer = "DAOKO×米津玄師" % 作曲
+    arranger = "莊曉涵×謝岱霖" % 編曲
+    tagline = ##f % remove footing 
 }
 
 % 古箏定弦
@@ -29,15 +29,7 @@
     c d f a
     \repeat unfold 13 { s4 }
     }
-  >>
-
-\layout {
-  \context {
-    \Score
-    % \override StaffGrouper.staff-staff-spacing.padding = #0
-    % \override StaffGrouper.staff-staff-spacing.basic-distance = #1
-  }
-}
+>>
 
 % Music score --------------------
 % right hand
@@ -57,15 +49,23 @@ RHMusic = {
         g'8\> a' c'' f'\! g'\< a' c'' f'\!  | %7
         g'8 a' c'' f' g'\open a'\open  \fermata r4     | %8
     % 9-12
-        r4 f'8 g'8~ g'8 f'8 c'8 bes8 | %9
+        r4 f'8 g'8~ g'8 f'8 c'8 
+        \override NoteHead.color = #red
+        bes8 
+        \override NoteHead.color = #black
+        | %9
         r4 e'4( \grace{f'16) } r4 f'8 e' | %10 
         d'4 f' e'8 c'4 a8(\( \grace{c')} | %11
         c'4\) r2 r4 | %12
     % 13-16
-        r4 f'8 g'4 f'8 r4 | %13
+        r4 f'8 g'4 f'8 c'8 
+        \override NoteHead.color = #red
+        bes 
+        \override NoteHead.color = #black
+        | %13
         r4 e'8 f' r4 f'8e' | %14 
-        d'4 f' e'8 c' c' c' | %15
-        d'4 r2 d'8 e' | %16
+        d'4 f' e'8 c' c' c'( | %15
+        d'4) r2 d'8 \p e' | %16
     % 17-20
         f'4. e'8 d' e' f'4 | %17
         r8 e' d' e' f' e' c' d' | %18
@@ -81,19 +81,19 @@ RHMusic = {
         bes'8 
         \override NoteHead.color = #black 
         f' f'8 g'16 a' g'8 f' f'4 | %23
-        r2 r4 a'8 c''16 a' | %24 
+        r2. a'8 c''16 a' | %24 
     % 25-28
-        g'8 f' d'16 f'8 g'8 a'16 r8 a'8 c''16 a' | %25 
-        g'8 f' c'16 f' 8 f'16 f'8 r8 a'8 c''16 a' | %26 
-        g'8 r8 a'16 c''8 c''8 d''8. c''16 
+        g'8 \accent f' d'16 f'8 g'16~ g'8(\grace{a'16)} r8 a'8 c''16 a' | %25 
+        g'8 \accent  f' c'16 f'8 f'16~ f'8 r8 a'8 c''16 a' | %26 
+        g'8 \accent r8 a'16 c''8 c''16~ c''16 d''8. c''16 
         \override NoteHead.color = #red 
         bes' 
         \override NoteHead.color = #black
-        a'8 | %27
-        a'2 r4 a'8 c''16 a' | %28 
+        a'8( | %27
+        a'2) r4 a'8 c''16 a' | %28 
     % 29-32
-        g'8 f' d'16 f'8 g'16 g'8 r8 a'8 c''16 a' | %29
-        g'8 f' d'16 f'8 f'16 f'8 r8 f'16 e' d' e' | %30 
+        g'8 \accent  f' d'16 f'8 g'16 g'8 r8 a'8 c''16 a' | %29
+        g'8 \accent  f' d'16 f'8 f'16 f'8 r8 f'16 e' d' e' | %30 
         d'8. d'16 g'4 e'8 d' e' e' | %31
         e'8 f'4. f'4 r4 | % 32
     % 33-36
@@ -269,18 +269,12 @@ LHMusic = {
         f,2 f, | %7
         r2. a,8\open c\open | %8
     % 9-12
-        \override NoteHead.color = #red
-        d4\open 
-        \override NoteHead.color = #black
-        r2.| %9
+        d4\open r2.| %9
         a8 c' f,4 r2 | %10
         d,8 a, c d r4. <a, c>8 | %11
         r2. a8 c' | %12
     % 13-16
-        \override NoteHead.color = #red
-        <d d'>4 
-        \override NoteHead.color = #black
-        r2 c'8 bes | %13
+        <d d'>4 r2. | %13
         a8 c' r8 f,8 r2 | %14 
         d,8 a, <c d>4 r2 | %15
         r1 | %16
@@ -412,16 +406,14 @@ LHMusic = {
         r1 |
 }
 % Verse 
-VerseOne = 
-    \lyricmode {
-        c d e test for lyric 
-    }
-VerseTwo = 
-    \lyricmode {
-        \repeat unfold 20 { \skip 1 }
+VerseOne = \lyricmode {
+    c d e test for lyric 
+}
+VerseTwo = \lyricmode {
+    \repeat unfold 20 { \skip 1 }
             あ8 の | %8
             ひ み わ た し た | %9
-    }
+}
 
 % Main part here ---------------
 
