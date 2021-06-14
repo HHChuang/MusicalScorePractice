@@ -416,25 +416,32 @@ VerseTwo = \lyricmode {
 }
 
 % Main part here ---------------
+\score{
+    <<
+        \new PianoStaff \with {instrumentName = #"GuZheng"}
+        <<
+            \new Staff {
+                \new Voice = "RH" {
+                \voiceOne \RHMusic
+                }
+                %FIXME: cannot find RH? label problem? 
+                %  \new Lyrics \lyricsto "RH" {
+                %     \VerseOne
+                % }
+            }
 
-<<
-  \new PianoStaff \with {instrumentName = #"GuZheng"}
-  <<
-    \new Staff {
-        \new Voice = "RH" {
-          \voiceOne \RHMusic
-        }
-        %FIXME: cannot find RH? label problem? 
-        %  \new Lyrics \lyricsto "RH" {
-        %     \VerseOne
-        % }
+            \new Staff {
+                \new Voice = "LH" {
+                    \voiceOne \LHMusic
+                }
+            }
+        >>
+    >>
+    \layout{}
+    \midi{
+        \context {
+        \Voice
+        \remove "Dynamic_performer"
     }
-
-    \new Staff {
-        \new Voice = "LH" {
-            \voiceOne \LHMusic
-        }
     }
-    
-  >>
->>
+}
