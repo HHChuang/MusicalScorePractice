@@ -1,10 +1,14 @@
 %
-%   ref. 
+%   Reference
 %       1. slur with arrow 
 %           https://music.stackexchange.com/questions/107384/slurs-with-arrows-for-glissando-alikes-in-lilypond-how-to
+%
 %       2. common notation for fretted strings 
 %           https://lilypond.org/doc/v2.19/Documentation/notation/common-notation-for-fretted-strings#string-number-indications
 %
+%       3. Unicode character recognition
+%           https://shapecatcher.com
+
 \version "2.18.2"
 
 \header {
@@ -146,48 +150,48 @@ RHMusic = {
             bes8 
             \override NoteHead.color = #black | 
         %10 
-            a8 c'8 \slurArrow \slurDown e'8( f'8)  r4 f'8-1 e'-2 | 
+            a8 c'8 \slurArrow \slurDown e'8( f'8)  r4 f'8 e' | 
         %11
-            d'4-3 \accent f'-1 e'8-1 c'4-2 \slurArrow \slurDown a8-3(  | 
+            d'4 \accent f' e'8 c'4 \slurArrow \slurDown a8(  | 
         %12
             c'2.:32)  a8 c'8 | 
     % 13-16
         %13
-            d'4 \prall \accent f'8^( g'4 \autoBeamOff f'8) 
+            d'4^\markup{ \char ##x2335 } \prall  f'8^( g'4 \autoBeamOff f'8) 
             \autoBeamOn c'8 
             \override NoteHead.color = #red
             bes 
             \override NoteHead.color = #black | 
         %14 
-            a8 c'8 \slurArrow \slurDown e'8( f') \prall r4 f'8e' | 
+            a8 c'8 \slurArrow \slurDown e'8( f')^\markup{ \char ##x2335 } \prall  r4 f'8e' | 
         %15    
             d'4 f' e'8 c' c' \slurArrow \slurDown c'( |
         %16 
             d'4:32) r2 d'8_\p e' | 
     % 17-20
         %17
-            f'4.:32 e'8 d' e' f'4( | 
+            f'4.:32 e'8 d' e' f'4^\markup{ \char ##x22B9 }( | 
         %18
             f'8 ^. ^"mute") e'-1 d'-3 e'-2 f'-1 e'-2 c'-4 d'-3 | 
         %19
-            c'2  c'2| 
+            c'2^\markup{ \char ##x2335 }  c'2^\markup{ \char ##x2335 }| 
         %20
             r2 
             \arpeggioNormal<e' f' g' a'>4_\markup{\circle{L}}\arpeggio 
             d'8 e' | 
     % 21-24
         %21
-            f'4. e'8 d' e' f'4 | 
+            f'4.:32 e'8 d' e' f'4^\markup{ \char ##x22B9 }( | 
         %22
-            r8 e' d' e' f' g' a' 
+            f'8^. ^"mute") e'-1 d'-4 e'-3 f'-2 g'-1 a'-2 
             \override NoteHead.color = #red 
-            bes' |
+            bes'-1 |
         %23
             bes'8 
             \override NoteHead.color = #black 
             f' f'8 g'16 a' g'8 f' f'4 | 
         %24
-            r2. a'8^\f c''16 a' | 
+            r2. a'8_\f c''16 a' | 
     % 25-28
         g'8 \accent f' 
         d'16 f'8 g'16^~ 
@@ -396,7 +400,7 @@ LHMusic = {
         %13
             d1 |
         %14
-            r4. f4._\markup{\circle{R}} r4 | 
+            r4. f4. r4 | 
         %15
             d,8 a, <c d>4 r2 | 
         %16
@@ -407,16 +411,16 @@ LHMusic = {
         %18
             r4 d, f, a, | 
         %19
-            c8 f-3 f-2 d' c8 \slurArrow \slurDown f8(  
+            c8 f f d' c8 \slurArrow \slurDown f8(  
             \override NoteHead.color = #red
             g8) g 
             \override NoteHead.color = #black  | 
         %20
             \acciaccatura a,16 a2:32 r2 | 
     % 21-24
-        <d, a, f>2 <f, a, f>2 | %21
-        r1 | %22
-        r1 | %23
+        <d, a, f>2\arpeggio <f, a, f>2 | %21
+        r4 <d, d>4 <f, f>2(  | %22
+        <f, f>4) <f a c'>4\arpeggio <c a,>4 <f, f>4 | %23
         r1 | %24
     % 25-28
         r1 | %25
@@ -533,13 +537,38 @@ LHMusic = {
         r1 | %112
 }
 % Verse 
-VerseOne = \lyricmode {
-    c d e test for lyric 
-}
-VerseTwo = \lyricmode {
-    \repeat unfold 20 { \skip 1 }
-            あ8 の | %8
-            ひ み わ た し た | %9
+Verse = \lyricmode {
+    % FIXME:
+    %https://lilypond.org/doc/v2.20/Documentation/notation/common-notation-for-vocal-music
+    %https://music.stackexchange.com/questions/98554/disaligning-lyrics-to-a-melody-with-lilypond
+    % 1-8
+        \repeat unfold 2
+        % 8 
+        % { \skip 1 }     
+        あ8 の 
+    % 9-12
+        % 9  
+            ひみわたした 
+        % 10 
+            なぎさを，いま
+        % 11
+            もおもいだすんだ。
+        % 12
+            すな
+    % 13-16 
+        % 13
+            のうえにきざん
+        % 14
+            だことば，きみ
+        % 15
+            のうしろすがた。
+        % 16
+            より
+    % 17-20
+    % 21-24
+    % 25-28
+    % 29-32
+    % 33-36
 }
 
 % Main part here ---------------
@@ -547,23 +576,19 @@ VerseTwo = \lyricmode {
     <<
         \new PianoStaff \with {instrumentName = #"GuZheng"}
         <<
-            
             \new Staff {
-                \new Voice = "RH" {
+                \new Voice {
                     \voiceOne \RHMusic
                 }
-                %FIXME: cannot find RH? label problem? 
-                %  \new Lyrics \lyricsto "RH" {
-                %     \VerseOne
-                % }
             }
-
             \new Staff {
-                \new Voice = "LH" {
+                \new Voice {
                     \voiceOne \LHMusic
                 }
             }
         >>
+        
+        % \new Lyrics \Verse
     >>
 
     \layout{
@@ -571,6 +596,7 @@ VerseTwo = \lyricmode {
             \Voice 
             %FIXME: stem direction 
             %http://lilypond.org/doc/v2.18/Documentation/notation/inside-the-staff
+            
             \consists "Melody_engraver"
             \override Stem.neutral-direction = #'()
         }
