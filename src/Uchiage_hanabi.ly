@@ -193,23 +193,27 @@ RHMusic = {
         %24
             r2. a'8_\f c''16 a' | 
     % 25-28
-        g'8 \accent f' 
-        d'16 f'8 g'16^~ 
-        \slurArrow \slurDown g'8(\grace{a'16)} r8 a'8 c''16 a' | %25 
-        g'8 \accent  f' c'16 f'8 f'16_~ f'4 \prall  a'8 c''16 a' | %26 
-        g'8 \accent r8 a'16 c''8 c''16~ c''16 d''8. c''16 
-        \override NoteHead.color = #red 
-        bes' 
-        \override NoteHead.color = #black
-        a'8( | %27
-        a'2:32) r4 a'8 c''16 a' | %28 
+        % 25
+            g'8 \accent f' 
+            d'16 f'8 g'16^~ 
+            \slurArrow \slurDown g'8(\grace{a'16)} r8 a'8 c''16 a' | 
+        % 26
+            g'8 \accent  f' c'16 f'8 f'16_~ f'4 \prall  a'8 c''16 a' | 
+        % 27
+            <g' c'' d'' g''>4\arpeggio a'16 c''8 c''16~ c''16 <d'' a'' d'''>8.\arpeggio  c''16 
+            \override NoteHead.color = #red 
+            bes' 
+            \override NoteHead.color = #black
+            a'8( |
+        % 28
+            a'2:32) r4 a'8 c''16 a' | %28 
     % 29-32
         g'8 \accent  f' d'16 f'8 g'16 g'8 r8 a'8 c''16 a' | %29
         g'8 \accent  f' d'16 f'8 f'16 f'8 r8 f'16 e' d' e' | %30 
         d'8. d'16 g'4 e'8 d' e' e' | %31
         e'8 f'4. f'4 r4 | % 32
     % 33-36
-        g'8^\mp a' c'' f' g'8 a' c'' f'  | %33
+        g'8_\mp a' c'' f' g'8 a' c'' f'  | %33
         g'8 a' c'' f' g'8 a' c'' f'  | %34
         g'8 a' c'' f' g'8 a' c'' f'  | %35
         g'8 a' c'' f' g'8 a' r8 f'16 g'  | %36
@@ -421,17 +425,17 @@ LHMusic = {
         <d, a, f>2\arpeggio <f, a, f>2 | %21
         r4 <d, d>4 <f, f>2(  | %22
         <f, f>4) <f a c'>4\arpeggio <c a,>4 <f, f>4 | %23
-        r1 | %24
+        r2. <a, c'>4 | %24
     % 25-28
-        r1 | %25
-        r1 | %26
-        r1 | %27
-        r1 | %28
+        c16 f c' f d16 g d' g g,4 <a, c'>4 | %25
+        c16 f c' f c16 f c' f f,4 <a, a>4 | %26
+        r4 <a, a>2. | %27
+        r2. <a, c'>4 | %28
     % 29-32
-        r1 | %29
-        r1 | %30
-        r1 | %31
-        r1 | %32
+        c16 f c' f d16 g d' g <d, g d'>4\arpeggio <a, c'>4 | %29
+        c16 f c' f c16 f c' f  <f, c f>4\arpeggio <a f>8 <f d>8| %30
+        <d c>4 g,4 r8 <d d'>4. | %31
+        r8 <f, a, f>4.\arpeggio r2 | %32
     % 33-36
         r1 | %33
         r1 | %34
@@ -578,12 +582,14 @@ Verse = \lyricmode {
         <<
             \new Staff {
                 \new Voice {
+                    \set midiInstrument = #"acoustic guitar (nylon)"
                     \voiceOne \RHMusic
                 }
             }
             \new Staff {
                 \new Voice {
-                    \voiceOne \LHMusic
+                    \set midiInstrument = #"acoustic guitar (nylon)"
+                    \voiceTwo \LHMusic
                 }
             }
         >>
@@ -603,8 +609,17 @@ Verse = \lyricmode {
     }
 
     \midi{
+        % TODO: multiple soundtracks
+        % https://music.stackexchange.com/questions/108555/how-to-split-multi-voice-lilypond-scores-to-multiple-midi-outputs-e-g-for-choi
+        % https://lilypond.org/doc/v2.19/Documentation/notation/midi-channel-mapping
         \context {
-            \Voice
+            \Staff
+            midiChannelMapping = #"RHMusic"
+            \remove "Dynamic_performer"
+        }
+        \context {
+            \Staff
+            midiChannelMapping = #"LHMusic"
             \remove "Dynamic_performer"
         }
     }
