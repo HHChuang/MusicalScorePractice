@@ -152,7 +152,7 @@ RHMusic = {
         %10 
             a8 c'8 \slurArrow \slurDown e'8( f'8)  r4 f'8 e' | 
         %11
-            d'4 \accent f' e'8 c'4 \slurArrow \slurDown a8(  | 
+            d'4 \accent f' e'8 c'4 \slurArrow \slurDown a8^\markup{ \char ##x2335 } (  | 
         %12
             c'2.:32)  a8 c'8 | 
     % 13-16
@@ -191,183 +191,270 @@ RHMusic = {
             \override NoteHead.color = #black 
             f' f'8 g'16 a' g'8 f' f'4 | 
         %24
-            r2. a'8_\f c''16 a' | 
+            r2. \mark \markup { \box B1 } a'8_\f c''16 a' | 
     % 25-28
         % 25
             g'8 \accent f' 
-            d'16 f'8 g'16^~ 
-            \slurArrow \slurDown g'8(\grace{a'16)} r8 a'8 c''16 a' | 
+            d'16 f'8 g'16(g'8) 
+            r8 a'8 c''16 a' | 
         % 26
-            g'8 \accent  f' c'16 f'8 f'16_~ f'4 \prall  a'8 c''16 a' | 
+            g'8 \accent  f' c'16 f'8 f'16_~ f'4 a'8 c''16 a' | 
         % 27
             <g' c'' d'' g''>4\arpeggio a'16 c''8 c''16~ c''16 <d'' a'' d'''>8.\arpeggio  c''16 
             \override NoteHead.color = #red 
             bes' 
             \override NoteHead.color = #black
-            a'8( |
+            a'8^( |
         % 28
-            a'2:32) r4 a'8 c''16 a' | %28 
+            \acciaccatura a16 a'2:32) r4 a'8  c''16 a' | 
     % 29-32
-        g'8 \accent  f' d'16 f'8 g'16 g'8 r8 a'8 c''16 a' | %29
-        g'8 \accent  f' d'16 f'8 f'16 f'8 r8 f'16 e' d' e' | %30 
-        d'8. d'16 g'4 e'8 d' e' e' | %31
-        e'8 f'4. f'4 r4 | % 32
+        % 29 
+            g'8 \accent  f' 
+            d'16 f'8 g'16( g'8) 
+            r8 a'8 c''16 a' |
+        % 30 
+            g'8 \accent  f' d'16 f'8 f'16 f'8 r8 f'16 e' d' e' | 
+        % 31
+            d'8. d'16 g'4 <a e'>8 d'8^\markup{ \char ##x2335 } e'8 e' |
+        % 32
+            e'8 f'4.:32( f'4) r4 | 
     % 33-36
-        g'8_\mp a' c'' f' g'8 a' c'' f'  | %33
-        g'8 a' c'' f' g'8 a' c'' f'  | %34
-        g'8 a' c'' f' g'8 a' c'' f'  | %35
-        g'8 a' c'' f' g'8 a' r8 f'16 g'  | %36
+        % 33
+            g'8_\mp a' c'' f' g'8 a' c'' f'  |
+        % 34
+            g'8 a' c'' f' g'8 a' c'' f'  | 
+        % 35
+            g'8 a' c'' f' g'8 a' c'' f'  |
+        % 36 
+            g'8 a' c'' f' g'8\fermata a'\fermata
+             r8 f'16 g'  |
     % 37-40 
-        a'8 g'16 f' f'8 d'16 e' f'8 e'16 d' c'8 a16 c' | %37
-        d'8 e'16 f' e' c' c' d' c'4 a16 a c' c' | %38 
-        d'8 e'16 f' e'8 f'16 g' a'8 g'16 f' e'8 c'16 c'| %39 
-        c'4 r2 r8 f'16 g' | %40 
+        % 37
+            a'8 g'16 f' f'8 d'16 e' f'8 e'16 d' c'8 a16 c' | 
+        % 38 
+            d'8 e'16-2 f'-1  e'-1 c'-3 c'-2 d'-1 c'4-2 a16 a c' c' | 
+        % 39  
+            d'8 e'16-1 f'-2 e'8-1 f'16-3 g'-2 a'8-1 g'16-1 f'-2 e'8-3 c'16 c'| 
+        % 40 
+            c'2. \prall r8 f'16 g' | 
     % 41-44
-        a'8 g'16 f' f'8 d'16 e' f'8 e'16 d' c'8 c'16 c' | %41
-        d'16 d' e' f' e' c' c' d' c' c' r8 d8. c'16 | %42
-        c'8 d' d'16 f'8. g'8. a'16 a'8 g' | %43
-        f'8 f'4. r2 | %44
+        % 41
+            a'8 g'16 f' f'8 d'16 e' f'8 e'16 d' c'8 c'16 c' | 
+        % 42
+            d'16 d' e' f' e' c'-3 c'-2 d'-1 c'-2 c'-3 r8 d'8. c'16 | 
+        % 43
+            c'8 d' d'16 f'8. g'8. a'16 a'8 g' | 
+        % 44
+        f'8 f'4. r2 |
     % 45-48
-        d''4 c''8 
-        \override NoteHead.color = #red
-        bes' 
-        \override NoteHead.color = #black
-        a'4 g'16 a' 
-        \override NoteHead.color = #red
-        bes'8| %45
-        bes'16 
-        \override NoteHead.color = #black
-        a' g' f' f' g' a' 
-        \override NoteHead.color = #red
-        bes' bes' 
-        \override NoteHead.color = #black
-        a' g' f' f' d' e' f' | %46
-        f'16 e' d' c' c'8 c' d'8. f'16 f'8 e' | %47 
-        e'16 c'8 a16 a8. d'16 d'2 | %48 
+        % 45
+            d''4 c''8 
+            \override NoteHead.color = #red
+            bes' 
+            \override NoteHead.color = #black
+            a'4 g'16 a' 
+            \override NoteHead.color = #red
+            bes'8| 
+        % 46
+            bes'16 
+            \override NoteHead.color = #black
+            a' g' f' f' g' a' 
+            \override NoteHead.color = #red
+            bes' bes' 
+            \override NoteHead.color = #black
+            a' g' f' f' d' e' f' | 
+        % 47
+            f'16 e' d' c' c'8 c' d'8. f'16 f'8 e' | 
+        % 48
+            e'16 c'8 a16 a8. d'16 d'2 | 
     % 49-52
-        d''4 c''8 
-        \override NoteHead.color = #red
-        bes' 
-        \override NoteHead.color = #black
-        a'4 g'16 a' 
-        \override NoteHead.color = #red
-        bes'8 | %49
-        bes'4 
-        \override NoteHead.color = #black
-        a'16 g' a'8 a'4 r4 | %50 
-        r4. 
-        \override NoteHead.color = #red
-        bes'8 
-        \override NoteHead.color = #black
-        a' g' f' f' | %51 
-        r1 | %52
+        % 49
+            d''4 c''8 
+            \override NoteHead.color = #red
+            bes' 
+            \override NoteHead.color = #black
+            a'4 g'16 a' 
+            \override NoteHead.color = #red
+            bes'8 | 
+        % 50 
+            bes'4 
+            \override NoteHead.color = #black
+            a'16 g' a'8 a'4 r4 | 
+        % 51
+            r4. 
+            \override NoteHead.color = #red
+            bes'8 
+            \override NoteHead.color = #black
+            a' g' f' f' | 
+        % 52
+            r1 | 
     % 53-56
-        r1 | %53
-        r1 | %54 
-        r2 r4 a'8 c''16 a' | %55
-        g'8 f' d'16 f'8 g'16 g'8 r8 a'8 c''16 a'16 | %56
+        % 53
+            r1 | 
+        % 54
+            r1 | 
+        % 55
+            r2.  \mark \markup { \box B2 } a'8 c''16 a' | 
+        % 56
+            g'8 f' 
+            d'16 f'8 g'16(g'8)  
+            r8 a'8 c''16 a'16 | 
     % 57-60
-        g'8 f' d'16 f'8 f'16 f'8 r8 a'8 c''16 a'16 | %57
-        g'8 r8 a'16 c''8 c''16 c'' d''8. c''16 
-        \override NoteHead.color = #red
-        bes' 
-        \override NoteHead.color = #black
-        a'8| %58
-        a'2 r4 a'16 a' c'' a' | %59
-        g'8 f' d'16 f'8 g'16 g'8 r8 a'8 c''16 a' | %60
+        % 57
+            g'8 f' d'16 f'8 f'16(f'8) 
+            r8 a'8 c''16 a'16 | 
+        % 58 
+            <g' c'' d'' g''>4\arpeggio a'16 c''8 c''16~ c''16 <d'' a'' d'''>8.\arpeggio  c''16 
+            \override NoteHead.color = #red 
+            bes' 
+            \override NoteHead.color = #black
+            a'8^( | 
+        % 59
+            \acciaccatura a16 a'2:32) r4 
+            a'8 c''16 a' | 
+        % 60
+            g'8 f' d'16 f'8 g'16( g'8) r8 a'8 c''16 a' | 
     % 61-64
-        g'8 f' d'16 f'8 f'16 f'8 r8 f'16 e' d' e' | %61 
-        d'4 g' e'8 c' a e' | %62
-        e'8 f'4. r2 | %63
-        r8 c'' a'16 g' f' g' g'2 | %64
+        % 61 
+            g'8 f' d'16 f'8 f'16( f'8) 
+            r8 f'16 e' d' e' | 
+        % 62
+            d'4 g' e'8 c' a e' | 
+        % 63
+            e'8 f'4. r2 | 
+        % 64
+            r8 c'' a'16 g' f' g' g'2 | 
     % 65-68
-        r8 c'' a'16 g' f' g' g'2 | %65
-        r8 c'' a'16 g' f' g' g'2 | %66
-        r8 d'' c''16 
-        \override NoteHead.color = #red
-        bes' bes' 
-        \override NoteHead.color = #black
-        c'' c''2 | %67
-        r8 c'' a'16 g' f' g' g'2 | %68
+        % 65
+            r8 c'' a'16 g' f' g' g'2 | 
+        % 66
+            r8 c'' a'16 g' f' g' g'2 | 
+        % 67
+            r8 d'' c''16 
+            \override NoteHead.color = #red
+            bes' bes' 
+            \override NoteHead.color = #black
+            c'' c''2 | 
+        % 68
+            r8 c'' a'16 g' f' g' g'2 | 
     % 69-72
-        r8 c'' a'16 g' f' g' g'2 | %69
-        r8 c'' a'16 g' f' g' g'8 f'16 g' a'8 
-        \override NoteHead.color = #red
-        bes' 
-        \override NoteHead.color = #black
-        | %70
-        g'8 g'4. r2 | %71 
-        g''8 a'' c''' f'' g''8 a'' c''' f'' | %72
+        % 69
+            r8 c'' a'16 g' f' g' g'2 | 
+        % 70
+            r8 c'' a'16 g' f' g' g'8 f'16 g' a'8 
+            \override NoteHead.color = #red
+            bes' 
+            \override NoteHead.color = #black | 
+        % 71
+            g'8 g'4. r2 | 
+        % 72 
+            g''8 a'' c''' f'' g''8 a'' c''' f'' |
     % 73-76
-        g''8 a'' c''' f'' g''8 a'' c''' f''| %73
-        g''8 a'' c''' f'' g''8 a'' c''' f''| %74
-        g''8 a'' c''' f'' g''8 a'' r4| %75
-        r4 f'8 g' g' f' c' 
-        \override NoteHead.color = #red
-        bes 
-        \override NoteHead.color = #black
-        | %76
+        % 73
+            g''8 a'' c''' f'' g''8 a'' c''' f''| 
+        % 74
+            g''8 a'' c''' f'' g''8 a'' c''' f''| 
+        % 75
+            g''8 a'' c''' f'' g''8 a'' r4| 
+        % 76
+            r4 f'8 g' g' f' c' 
+            \override NoteHead.color = #red
+            bes 
+            \override NoteHead.color = #black | 
     % 77-80
-        a8 c' f'4 r4 f'8 e' | %77
-        d'4 f' e'8 c'4 c'8  | %78
-        c'4 r2 a8 c' | %79
-        d'4 f'8 g' g' f' c' 
-        \override NoteHead.color = #red
-        bes 
-        \override NoteHead.color = #black
-        | %80
+        % 77 
+            a8 c' f'4 r4 f'8 e' | 
+        % 78
+            d'4 f' e'8 c'4 c'8  | 
+        % 79
+            c'4 r2 a8 c' | 
+        % 80 
+            d'4 f'8 g' g' f' c' 
+            \override NoteHead.color = #red
+            bes 
+            \override NoteHead.color = #black | 
     % 81-84
-        a8 c' e' f' r4 f'8 e' | %81
-        d'4 f' e'8 c' c' d' | %82
-        d'4 r2 a'8 c''16 a' | %83
-        g'8 f' d'16 f'8 g'16 g'8 r8 a'8 c''16 a' | %84
+        % 81
+            a8 c' e' f' r4 f'8 e' | 
+        % 82
+            d'4 f' e'8 c' c' d' | 
+        % 83
+            d'4 r2 a'8 c''16 a' | 
+        % 84
+            g'8 f' d'16 f'8 g'16 g'8 r8 a'8 c''16 a' | 
     % 85-88
-        g'8 f' c'16 f'8 f'16 f'8 r8 a'8 c''16 a' | %85
-        g'8 r8 a'16 c''8 c''16 c''16 d''8. c''16 
-        \override NoteHead.color = #red 
-        bes' 
-        \override NoteHead.color = #black
-        a'8 | %86
-        a'2 r4 a'8 c''16 a' | %87
-        g'8 f' d'16 f'8 g'16 g'8 r8 a'8 c''16 a' | %88
+        % 85
+            g'8 f' c'16 f'8 f'16 f'8 r8 a'8 c''16 a' | 
+        % 86
+            g'8 r8 a'16 c''8 c''16 c''16 d''8. c''16 
+            \override NoteHead.color = #red 
+            bes' 
+            \override NoteHead.color = #black
+            a'8 | 
+        % 87
+            a'2 r4 a'8 c''16 a' | 
+        % 88
+            g'8 f' d'16 f'8 g'16 g'8 r8 a'8 c''16 a' | 
     % 89-92
-        g'8 f' d'16 f'8 f'16 f'8 r8 f'16 e' d' e' | %89
-        d'8. d'16 g'4 e'8 d' e' e' | %90
-        e'8 f'4. r2 | %91 
-        d'4 d'16 e' f'8 g'4 a'8 f' | %92
+        % 89 
+            g'8 f' d'16 f'8 f'16 f'8 r8 f'16 e' d' e' | 
+        % 90 
+            d'8. d'16 g'4 e'8 d' e' e' | 
+        % 91
+            e'8 f'4. r2 | 
+        % 92 
+            d'4 d'16 e' f'8 g'4 a'8 f' | 
     % 93-96
-        f'4 a'16 g' f'8 g'4 c''8 a' | %93
-        a'4 f'8 c' d'4 c'8 
-        \override NoteHead.color = #red 
-        bes 
-        \override NoteHead.color = #black
-        |  %94
-        c'2 r2 | %95
-        d'4 d'16 e' f'8 g'4 a'8 f' | %96
+        % 93
+            f'4 a'16 g' f'8 g'4 c''8 a' | 
+        % 94
+            a'4 f'8 c' d'4 c'8 
+            \override NoteHead.color = #red 
+            bes 
+            \override NoteHead.color = #black |  
+        % 95
+            c'2 r2 | 
+        % 96
+            d'4 d'16 e' f'8 g'4 a'8 f' |
     % 97-100
-        f'4 a'16 g' f'8 g'4 c''8 a' | %97
-        d'4. a'8 g'4. f'16 g' | %98
-        a'4. g'16 f' f'2 | %99
-        d'4 d'16 e' f'8 g'4 a'8 f' | %100
+        % 97
+            f'4 a'16 g' f'8 g'4 c''8 a' | 
+        % 98
+            d'4. a'8 g'4. f'16 g' |
+        % 99
+            a'4. g'16 f' f'2 | 
+        % 100
+            d'4 d'16 e' f'8 g'4 a'8 f' | 
     % 101-104
-        f'4 a'16 g' f'8 g'4 c''8 a' | %101
-        a'4 f'8 c' d'4 c'8 
-        \override NoteHead.color = #red 
-        bes' 
-        \override NoteHead.color = #black
-        | %102
-        c'2 r2 | %103
-        d'4 d'16 e' f'8 g'4 a'8 f' | %104
+        % 101
+            f'4 a'16 g' f'8 g'4 c''8 a' | 
+        % 102
+            a'4 f'8 c' d'4 c'8 
+            \override NoteHead.color = #red 
+            bes' 
+            \override NoteHead.color = #black | 
+        % 103
+            c'2 r2 | 
+        % 104
+        d'4 d'16 e' f'8 g'4 a'8 f' | 
     % 105-108
-        f'4 a'16 g' f'8 g'4 c''8 a' | %105
-        d''4. a'8 g'4. f'16 g' | %106
-        a'4. g'16 f' f'2 | %107
-        g''8 a'' c''' f'' g''8 a'' c''' f'' | %108
+        % 105
+            f'4 a'16 g' f'8 g'4 c''8 a' | 
+        % 106
+            d''4. a'8 g'4. f'16 g' | 
+        % 107 
+            a'4. g'16 f' f'2 | 
+        % 108 
+            g''8 a'' c''' f'' g''8 a'' c''' f'' | 
     % 109-112
-        g''8 a'' c''' f'' g''8 a'' c''' a'' | %109
-        g''8 a'' c''' f'' g''8 a'' c''' f'' | %110
-        g''8 a'' c''' f'' g''8 a'' c''' f'' | %111
-        g''8 a'' f'' g'' r2 | %112
+        % 109 
+            g''8 a'' c''' f'' g''8 a'' c''' a'' | 
+        % 110
+            g''8 a'' c''' f'' g''8 a'' c''' f'' | 
+        % 111
+            g''8 a'' c''' f'' g''8 a'' c''' f'' | 
+        % 112
+            g''8 a'' f'' g'' r2 \bar "|." 
 }
 % Left hand
 LHMusic = {
@@ -390,14 +477,14 @@ LHMusic = {
         %7
             f,2 f, | 
         %8
-            r2. a,8\open c\open |
+            r2. a,8^\open c^\open |
     % 9-12
         %9
-            d4\open r2.| 
+            d4^\open r2.| 
         %10
             r4 f,2 r4 | 
         %11
-            d,8-5 a,-3 c-2 d-1 r4. <a, c>8_\markup{\circle{R}} | 
+            d,8-5 a,-3 c-2 d-1 r4. c8 | 
         %12
             r1 | 
     % 13-16
@@ -422,35 +509,69 @@ LHMusic = {
         %20
             \acciaccatura a,16 a2:32 r2 | 
     % 21-24
-        <d, a, f>2\arpeggio <f, a, f>2 | %21
-        r4 <d, d>4 <f, f>2(  | %22
-        <f, f>4) <f a c'>4\arpeggio <c a,>4 <f, f>4 | %23
-        r2. <a, c'>4 | %24
+        % 21
+            <d, a, f>2\arpeggio <f, a, f>2 |
+        % 22
+            r4 <d, d>4 <f, f>2(  |
+        % 23
+            <f, f>4) <f a c'>4._\markup{\circle{R}}\arpeggio <c a,>8 <f, f>4 | 
+        %24
+            r2. <a, c'>4 | 
     % 25-28
-        c16 f c' f d16 g d' g g,4 <a, c'>4 | %25
-        c16 f c' f c16 f c' f f,4 <a, a>4 | %26
-        r4 <a, a>2. | %27
-        r2. <a, c'>4 | %28
+        % 25 
+            c16 f c' f 
+            d16 a d' a g,4 
+            <a, c'>4 | 
+        % 26
+            c16 f c' f c16 f c' f f,4 <a, a>4 | 
+        % 27
+            r4 <a, a>2. | 
+        % 28
+            % TODO: how to remove beam? 
+            \autoBeamOff
+            \override Glissando.style = #'zigzag
+            a'8 \glissando  a,8 \glissando a'8 \glissando a,8
+            \autoBeamOn
+            r4 
+            <a, c'>4 | 
     % 29-32
-        c16 f c' f d16 g d' g <d, g d'>4\arpeggio <a, c'>4 | %29
-        c16 f c' f c16 f c' f  <f, c f>4\arpeggio <a f>8 <f d>8| %30
-        <d c>4 g,4 r8 <d d'>4. | %31
-        r8 <f, a, f>4.\arpeggio r2 | %32
+        % 29
+            c16 f c' f 
+            d16 a d' a <d g d'>4\arpeggio 
+            <a, c'>4 | 
+        % 30 
+            c16 f c' f c16 f c' f  <f, c f>4\arpeggio <a f>8 <f d>8| 
+        % 31
+            <d c>4 g,4 r8 d4. | 
+        % 32
+            r8 <f, a, f>4.\arpeggio f,2 | 
     % 33-36
-        r1 | %33
-        r1 | %34
-        r1 | %35
-        r1 | %36
+        % 33
+            d8^( f4 f8) d8^( f4 f8)  | 
+        % 34
+            c8^( f4 f8) c8^( f4 f8) | 
+        % 35
+            a,8^( f4 f8) a,8^( f4 f8) | 
+        % 36
+            a,8^( f4 f8) <a, c f>2\arpeggio | 
     % 37-40 
-        r1 | %37
-        r1 | %38
-        r1 | %39 
-        r1 | %40 
+        % 37 
+            <a d'>4\arpeggio <d f>\arpeggio <c f>\arpeggio <a, d>\arpeggio| 
+        % 38 
+            <d f>4\arpeggio c16 f8 f16 <c d f>2\arpeggio| 
+        % 39
+            <d a>4\arpeggio <f c'>4\arpeggio <a d'>4\arpeggio <c a c'>4\arpeggio| 
+        % 40
+            <f, a, c f>1\arpeggio | 
     % 41-44
-        r1 | %41
-        r1 | %42
-        r1 | %43
-        r1 | %44
+        % 41
+            <a d'>4\arpeggio <d f>\arpeggio <c f>\arpeggio <a, c>4\arpeggio |  
+        % 42
+            a,16 c8 c16 g,16 c8 c16 <g, a, c>4 r4| 
+        % 43
+            r1 |  
+        % 44
+            r1 | 
     % 45-48
         r1 | %45
         r1 | %46
@@ -462,23 +583,43 @@ LHMusic = {
         r1 | %51
         d4 d8. d16 d16 d8. d8 d16 d16 | %52 
     % 53-56
-        d4 d8. d16 d16 d8. d8 d16 d16 | %53
-        f4 f8. f16 f16 f8. f8 f16 f16 | %54
-        \override NoteHead.color = #red
-        e4 e8. e16 e16 e8. 
-        \override NoteHead.color = #black
-        r4 | %55
-        r1 | %56
+        % 53
+            d4 d8. d16 d16 d8. d8 d16 d16 | 
+        % 54
+            f4 f8. f16 f16 f8. f8 f16 f16 | 
+        % 55
+            \override NoteHead.color = #red
+            e4 e2 
+            \override NoteHead.color = #black
+            <a, c'>4 | 
+        % 56
+            c16 f c' f 
+            d16 a d' a g,4 
+            <a, c'>4 | 
     % 57-60
-        r1 | %57
-        r1 | %58
-        r1 | %59
-        r1 | %60
+        % 57
+            c16 f c' f c16 f c' f f,4 <a, a>4 | 
+        % 58
+            r4 <a, a>2. | 
+        % 59
+            \autoBeamOff
+            \override Glissando.style = #'zigzag
+            a'8 \glissando  a,8 \glissando a'8 \glissando a,8
+            \autoBeamOn
+            r4 <a, c'>4  | 
+        % 60
+            c16 f c' f 
+            d16 a d' a <d g d'>4\arpeggio 
+            <a, c'>4 | 
     % 61-64
-        r1 | %61
-        r1 | %62
-        r1 | %63
-        r1 | %64
+        % 61
+            c16 f c' f c16 f c' f  <f, c f>4\arpeggio <a f>8 <f d>8 |
+        % 62 
+            <d c>4 r2. | 
+        % 63
+            r8 <f, a, f>4.\arpeggio r2 | 
+        % 64
+            r1 | 
     % 65-68
         r1 | %65
         r1 | %66
@@ -540,13 +681,22 @@ LHMusic = {
         r1 | %111
         r1 | %112
 }
+
+Null = {
+    \time 4/4
+    c4 c4 c4 c4 
+    c4 c4 c4 c4 
+    c4 c4 c4 c4 
+    c4 c4 c4 c4 
+}
+
 % Verse 
 Verse = \lyricmode {
     % FIXME:
     %https://lilypond.org/doc/v2.20/Documentation/notation/common-notation-for-vocal-music
     %https://music.stackexchange.com/questions/98554/disaligning-lyrics-to-a-melody-with-lilypond
     % 1-8
-        \repeat unfold 2
+        % \repeat unfold 2
         % 8 
         % { \skip 1 }     
         あ8 の 
@@ -587,14 +737,17 @@ Verse = \lyricmode {
                 }
             }
             \new Staff {
-                \new Voice {
-                    \set midiInstrument = #"acoustic guitar (nylon)"
-                    \voiceTwo \LHMusic
-                }
+                % \new Voice {
+                %     \voiceTwo \LHMusic
+                % }
+                \new Voice \LHMusic
+                % FIXME:
+                % \new NullVoice = "singer" \Null
             }
+            % \new Lyrics \lyricsto singer \Verse
         >>
         
-        % \new Lyrics \Verse
+        % \new Lyrics \lyricsto singer \Verse
     >>
 
     \layout{
@@ -608,19 +761,19 @@ Verse = \lyricmode {
         }
     }
 
-    \midi{
-        % TODO: multiple soundtracks
-        % https://music.stackexchange.com/questions/108555/how-to-split-multi-voice-lilypond-scores-to-multiple-midi-outputs-e-g-for-choi
-        % https://lilypond.org/doc/v2.19/Documentation/notation/midi-channel-mapping
-        \context {
-            \Staff
-            midiChannelMapping = #"RHMusic"
-            \remove "Dynamic_performer"
-        }
-        \context {
-            \Staff
-            midiChannelMapping = #"LHMusic"
-            \remove "Dynamic_performer"
-        }
-    }
+    % \midi{
+    %     % TODO: multiple soundtracks
+    %     % https://music.stackexchange.com/questions/108555/how-to-split-multi-voice-lilypond-scores-to-multiple-midi-outputs-e-g-for-choi
+    %     % https://lilypond.org/doc/v2.19/Documentation/notation/midi-channel-mapping
+    %     \context {
+    %         \Staff
+    %         midiChannelMapping = #"RHMusic"
+    %         \remove "Dynamic_performer"
+    %     }
+    %     \context {
+    %         \Staff
+    %         midiChannelMapping = #"LHMusic"
+    %         \remove "Dynamic_performer"
+    %     }
+    % }
 }
