@@ -109,7 +109,7 @@ slurArrow =
                         (+ (cdr frth) 0)))))
                         
                 (ly:slur::print grob)))))
-%
+% 
 % -------------------- Music score --------------------
 %
 % Right hand
@@ -167,7 +167,7 @@ RHMusic = {
         %15    
             d'4 f' e'8 c' c' \slurArrow \slurDown c'( |
         %16 
-            d'4:32) r2 d'8_\p e' | 
+            d'4:32) bes'2\rest d'8_\p e' | 
     % 17-20
         %17
             f'4.:32 e'8 d' e' f'4^\markup{ \char ##x22B9 }( | 
@@ -177,7 +177,7 @@ RHMusic = {
             c'8^\markup{ \char ##x2335 } a a d'  
             c'8^\markup{ \char ##x2335 } a a bes | 
         %20
-            r2 
+            bes'2\rest
             \arpeggioNormal<e' f' g' a'>4_\markup{\circle{L}}\arpeggio 
             d'8 e' | 
     % 21-24
@@ -192,7 +192,8 @@ RHMusic = {
             \override NoteHead.color = #black 
             f' f'8 g'16 a' g'8 f' f'4 | 
         %24
-            r2. \mark \markup { \box B1 } a'8_\f c''16 a' | 
+            bes'2. 
+            \mark \markup { \box B1 } a'8_\f c''16 a' | 
     % 25-28
         % 25
             g'8 \accent f' 
@@ -214,7 +215,7 @@ RHMusic = {
             d'16 f'8 g'16( g'8) 
             r8 a'8 c''16 a' |
         % 30 
-            g'8 \accent  f' d'16 f'8 f'16 f'8 r8 f'16 e' d' e' | 
+            g'8 \accent  f' d'16 f'8 f'16( f'8) r8 f'16 e' d' e' | 
         % 31
             d'8. d'16 g'4 <a e'>8 d'8^\markup{ \char ##x2335 } e'8 e' |
         % 32
@@ -248,31 +249,32 @@ RHMusic = {
             c'8) d'8( d'16) f'8. g'8. a'16( a'8) 
             <g' e'>8 | 
         % 44
-            f'8 f'4.:32 r2 |
+            f'8 f'4.:32 b'2\rest |
     % 45-48
         % 45
             d''4 c''8 
             \override NoteHead.color = #red
             bes' 
             \override NoteHead.color = #black
-            <d' e' a'>4\arpeggio  g'16 a' 
+            <d' e' a'>4\arpeggio  g'16-3 a'-2 
             \override NoteHead.color = #red
-            bes'8(
+            bes'8-1(
             \override NoteHead.color = #black
             % f' >8(| 
         % 46
             \override NoteHead.color = #red
             bes'16) 
             \override NoteHead.color = #black
-            a' g' f'( f') g' a' 
+            a'-1 g'-2 f'-3( f') g' a' 
             \override NoteHead.color = #red
             bes'( bes') 
             \override NoteHead.color = #black
             a' g' f'( f') d' e' f'( | 
         % 47
-            f'16) e' d' c'( c'8) c' d'8. f'16( f'8) e'( | 
+            f'16) e' d' c'( c'8) c' 
+            d'8.^\accent f'16( f'8) e'( | 
         % 48
-            e'16) c'8 a16 a8. d'16:32( d'2) | 
+            e'16) c'8 a16( a8.) d'16:32( d'2) | 
     % 49-52
         % 49
             d''4 c''8 
@@ -293,14 +295,14 @@ RHMusic = {
             \override NoteHead.color = #black
             a' g' f' <c' d' f'>\arpeggio | 
         % 52
-            r1 | 
+            R1 | 
     % 53-56
         % 53
             r1 | 
         % 54
             r1 | 
         % 55
-            f'8 f'8 f'8 f'16 f'16 r4  
+            e'8 e'8 e'8 e'16 e'16 r4  
             \mark \markup { \box B2 } a'8 c''16 a' | 
         % 56
             g'8 f' 
@@ -492,16 +494,16 @@ LHMusic = {
         %7
             f,2 f, | 
         %8
-            r2. a,8^\open c^\open |
+            R2. a,8^\open c^\open |
     % 9-12
         %9
-            d4^\open r2.| 
+            d4^\open R2.| 
         %10
             r4 f,2 r4 | 
         %11
             d,8-5 a,-3 c-2 d-1 r4. c8 | 
         %12
-            r1 | 
+            R1 | 
     % 13-16
         %13
             d1 |
@@ -510,7 +512,7 @@ LHMusic = {
         %15
             d,8 a, <c d>4 r2 | 
         %16
-            r1 | 
+            R1 | 
     % 17-20
         %17
             <d, d>2 <f, f>2 | 
@@ -598,18 +600,18 @@ LHMusic = {
         % 45
             <d f d'>1\arpeggio  | 
         % 46
-            r1 | 
+            R1 | 
         % 47
-            r1 | 
+            R2 <d, d f >2\arpeggio | 
         % 48
-            <d f d'>1\arpeggio  | 
+            R1  | 
     % 49-52
         % 49
             <d f d'>1\arpeggio | 
         % 50
-            r1 | 
+            R1 | 
         % 51
-            r1 | 
+            R1 | 
         % 52
             d4 d8. d16( d16) d8. d8 d16 d16 |
     % 53-56
@@ -619,7 +621,7 @@ LHMusic = {
             f4 f8. f16( f16) f8. f8 f16 f16 | 
         % 55
             \override NoteHead.color = #red
-            e2. 
+            bes2. 
             \override NoteHead.color = #black
             <a, c'>4 | 
         % 56
@@ -649,23 +651,23 @@ LHMusic = {
         % 63
             r8 <f, a, f>4.\arpeggio f,2 | 
         % 64
-            r2 r8 c8 a,16 g, f, g,  | 
+            R2 r8 c8 a,16 g, f, g,  | 
     % 65-68
         % 65
-            g,8 r2  c8 a,16 g, f, g, | 
+            g,8 R2  c8 a,16 g, f, g, | 
         % 66
-            g,8  r2  c8 a,16 g, f, g, | 
+            g,8  R2  c8 a,16 g, f, g, | 
         % 67
             g1 | 
         % 68
-            r2 r8 c8 a,16 g, f, g, | 
+            R2 r8 c8 a,16 g, f, g, | 
     % 69-72
         % 69
-            g,8 r2  c8 a,16 g, f, g, | 
+            g,8 R2  c8 a,16 g, f, g, | 
         % 70
             g1 | 
         % 71
-            r1 | 
+            R1 | 
         % 72
             d'4 d'8. d'16( d'16) d'8. d'8 d'16 d'16 | 
     % 73-76
@@ -677,23 +679,23 @@ LHMusic = {
             f'8 f'8 f'8 f'16 f'16 r4 
             a8 c' |
         % 76
-            d'4 r2. 
+            d'4 R2. 
     % 77-80
         % 77
             r4 f,2 r4 | 
         % 78
             d,8-5 a,-3 c-2 d-1 r4. c8 | 
         % 79
-            r1 | 
+            R1 | 
         % 80
             d1 | 
     % 81-84
         % 81
             r4. f4. r4  | 
         % 82
-            d,8 a, <c d>4 r2 | 
+            d,8 a, <c d>4 R2 | 
         % 83
-            r2. <a, c'>4  | 
+            R2. <a, c'>4  | 
         % 84
             c16 f c' f 
             d16 a d' a g,4 
