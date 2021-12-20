@@ -295,14 +295,14 @@ RHMusic = {
             \override NoteHead.color = #black
             a' g' f' <c' d' f'>\arpeggio | 
         % 52
-            R1 | 
+            <d d'>4 d'8. d'16( d'16) d'8. d'8 d'16 d'16 | 
     % 53-56
         % 53
-            r1 | 
+            <d d'>4 d'8. d'16( d'16) d'8. d'8 d'16 d'16 | 
         % 54
-            r1 | 
+            <f f'>4 f'8. f'16( f'16) f'8. f'8 f'16 f'16 | 
         % 55
-            e'8 e'8 e'8 e'16 e'16 r4  
+            e'8( e'4.:32)  r4 
             \mark \markup { \box B2 } a'8 c''16 a' | 
         % 56
             g'8 f' 
@@ -430,7 +430,7 @@ RHMusic = {
             bes 
             \override NoteHead.color = #black |  
         % 95
-            c'2 r2 | 
+            <c f c'>2\arpeggio r2 | 
         % 96
             d'4 d'16 e' f'8 g'4 a'8 f' |
     % 97-100
@@ -448,17 +448,17 @@ RHMusic = {
         % 102
             a'4 f'8 c' d'4 c'8 
             \override NoteHead.color = #red 
-            bes' 
+            bes
             \override NoteHead.color = #black | 
         % 103
-            c'2 r2 | 
+            <c f c'>2\arpeggio r2 | 
         % 104
         d'4 d'16 e' f'8 g'4 a'8 f' | 
     % 105-108
         % 105
             f'4 a'16 g' f'8 g'4 c''8 a' | 
         % 106
-            d''4. a'8 g'4. f'16 g' | 
+            d'4. a'8 g'4. f'16 g' | 
         % 107 
             a'4. g'16 f' f'2 | 
         % 108 
@@ -471,7 +471,9 @@ RHMusic = {
         % 111
             g''8 a'' c''' f'' g''8 a'' c''' f'' | 
         % 112
-            g''8 a'' f'' g'' r2 \bar "|." 
+            g''8 a'' f'' g'' 
+            g''8 a'' g'4\open
+            \bar "|." 
 }
 % Left hand
 LHMusic = {
@@ -613,15 +615,14 @@ LHMusic = {
         % 51
             R1 | 
         % 52
-            d4 d8. d16( d16) d8. d8 d16 d16 |
+            d,1_\markup{ \char ##x30ad } |
     % 53-56
         % 53
-            d4 d8. d16( d16) d8. d8 d16 d16 | 
+            d,1_\markup{ \char ##x30ad }  | 
         % 54
-            f4 f8. f16( f16) f8. f8 f16 f16 | 
+            f,1_\markup{ \char ##x30ad } | 
         % 55
-            \override NoteHead.color = #red
-            bes2. 
+            r2. 
             \override NoteHead.color = #black
             <a, c'>4 | 
         % 56
@@ -669,14 +670,14 @@ LHMusic = {
         % 71
             R1 | 
         % 72
-            d'4 d'8. d'16( d'16) d'8. d'8 d'16 d'16 | 
+            d'2^\accent f'4.( f'8) | 
     % 73-76
         % 73
-            d'4 d'8. d'16( d'16) d'8. d'8 d'16 d'16 | 
+            g'2 c''2    | 
         % 74
-            f'4 f'8. f'16( f'16) f'8. f'8 f'16 f'16 | 
+            d'2^\accent f'4.( f'8)| 
         % 75
-            f'8 f'8 f'8 f'16 f'16 r4 
+            g'2.
             a8 c' |
         % 76
             d'4 R2. 
@@ -727,32 +728,52 @@ LHMusic = {
         % 91
             r8 <f, a, f>4.\arpeggio f,2 | 
         % 92
-            r1 | 
+            <d, a, c>2 <g, a, c>2 | 
     % 93-96
-        r1 | %93
-        r1 | %94 
-        r1 | %95
-        r1 | %96
+        % 93
+            <f, c d>2 <g, a, c>2    |      
+        % 94
+            <a, f a>2 <d, a, c>2    |
+        %95
+            r1 |
+        % 96
+            <d, a, c>2 <g, a, c>2   | 
     % 97-100
-        r1 | %97
-        r1 | %98
-        r1 | %99
-        r1 | %100
+        % 97
+            <f, c d>2 <g, a, c>2    |
+        % 98
+            <d, a, c>2 <g, a, c>2   |
+        % 99
+            <a, f a>2 <f, c d>2     |
+        % 100
+            <d, a, c>2 <g, a, c>2   | 
     % 101-104
-        r1 | %101
-        r1 | %102
-        r1 | %103
-        r1 | %104
+        % 101
+            <f, c d>2 <g, a, c>2    |
+        %102
+            <a, f a>2 <d, a, c>2    |
+        %103
+            r1 |
+        % 104
+            <d, a, c>2 <g, a, c>2   |
     % 105-108
-        r1 | %105
-        r1 | %106
-        r1 | %107
-        r1 | %108
+        % 105
+            <f, c d>2 <g, a, c>2    |
+        % 106
+            <d, a, c>2 <g, a, c>2   |
+        % 107
+            <a, f a>2 <f, c d>2     |
+        % 108
+            d'2^\accent f'4.( f'8) | 
     % 109-112
-        r1 | %109
-        r1 | %110
-        r1 | %111
-        r1 | %112
+        % 109
+            g'2 c''2    |
+        % 110
+            d'2^\accent f'4.( f'8)|
+        % 111
+            g'2 c''2    |
+        %112
+            f1
 }
 
 Null = {
